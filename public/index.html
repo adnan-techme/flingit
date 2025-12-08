@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlingIt</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="global-header">
+        <div class="logo-pill">
+            <span class="material-symbols-outlined">wifi_tethering</span>
+            <span>FlingIt</span>
+        </div>
+    </header>
+
+    <!-- Help Button -->
+    <button id="help-btn" class="icon-btn fixed-top-right" aria-label="Help">
+        <span class="material-symbols-outlined">help</span>
+    </button>
+
+    <!-- Help Modal -->
+    <div id="help-modal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>How it Works</h3>
+                <button id="close-help-btn" class="icon-btn-small">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="help-step">
+                    <div class="step-icon"><span class="material-symbols-outlined">devices</span></div>
+                    <div class="step-text">
+                        <h4>1. Connect</h4>
+                        <p>Open FlingIt on both devices.</p>
+                    </div>
+                </div>
+                <div class="help-step">
+                    <div class="step-icon"><span class="material-symbols-outlined">ads_click</span></div>
+                    <div class="step-text">
+                        <h4>2. Select</h4>
+                        <p>Drag & drop a file to share.</p>
+                    </div>
+                </div>
+                <div class="help-step">
+                    <div class="step-icon"><span class="material-symbols-outlined">send</span></div>
+                    <div class="step-text">
+                        <h4>3. Transfer</h4>
+                        <p>Click Send. Fast & Secure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="app-container">
+        <!-- STATE 1: SCANNING -->
+        <div id="scanning-view" class="view-state active">
+            <div class="radar-container">
+                <div class="radar-circle"></div>
+                <div class="radar-circle delay-1"></div>
+                <div class="radar-circle delay-2"></div>
+                <div class="radar-icon">
+                    <span class="material-symbols-outlined">wifi_tethering</span>
+                </div>
+            </div>
+            <div class="status-text">Scanning for nearby devices...</div>
+        </div>
+
+        <!-- STATE 2: CONNECTED / UPLOAD -->
+        <div id="connected-view" class="view-state hidden">
+            <div class="card" id="upload-card">
+                <div class="card-icon">
+                    <span class="material-symbols-outlined">devices</span>
+                </div>
+                <h2>Peer Connected</h2>
+                <p>Drag & Drop a file here</p>
+                <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 8px;">or click to browse</p>
+                <input type="file" id="file-input" hidden>
+            </div>
+        </div>
+
+        <!-- STATE 3: FILE STAGED -->
+        <div id="staged-view" class="view-state hidden">
+            <div class="card">
+                <div class="file-icon">
+                    <span class="material-symbols-outlined">description</span>
+                </div>
+                <h3 id="staged-filename">image.jpg</h3>
+                <button id="send-btn" class="pill-btn">
+                    <span class="material-symbols-outlined">send</span>
+                    Send File
+                </button>
+            </div>
+        </div>
+
+        <!-- STATE 4: TRANSFERRING -->
+        <!-- STATE 4: TRANSFERRING -->
+        <div id="transfer-view" class="view-state hidden">
+            <div class="card">
+                <div class="progress-container">
+                    <svg class="progress-ring" width="120" height="120">
+                        <circle class="progress-ring__circle-bg" stroke="rgba(0,0,0,0.1)" stroke-width="8"
+                            fill="transparent" r="52" cx="60" cy="60" />
+                        <circle class="progress-ring__circle" stroke="#1F1F1F" stroke-width="8" fill="transparent"
+                            r="52" cx="60" cy="60" />
+                    </svg>
+                    <div class="progress-icon">
+                        <span class="material-symbols-outlined">swap_vert</span>
+                    </div>
+                </div>
+                <div class="status-text" id="transfer-status">Sending...</div>
+                <!-- Success / Send Another (Hidden initially) -->
+                <div id="sender-success" style="display: none; margin-top: 24px; text-align: center;">
+                    <h3 style="margin-bottom: 16px;">Sent Successfully!</h3>
+                    <button class="pill-btn" onclick="resetSession()">
+                        <span class="material-symbols-outlined">restart_alt</span>
+                        Send Another File
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- STATE 5: DOWNLOAD READY (Receiver) -->
+        <div id="download-view" class="view-state hidden">
+            <div class="card">
+                <div class="file-icon">
+                    <span class="material-symbols-outlined">check_circle</span>
+                </div>
+                <h3 id="received-filename">document.pdf</h3>
+                <a id="download-btn" class="pill-btn" href="#" download style="margin-bottom: 12px;">
+                    <span class="material-symbols-outlined">download</span>
+                    Download
+                </a>
+                <button class="pill-btn" onclick="resetSession()"
+                    style="background: transparent; color: var(--color-text); border: 1px solid var(--color-text);">
+                    <span class="material-symbols-outlined">restart_alt</span>
+                    Send Another
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

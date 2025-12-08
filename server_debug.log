@@ -1,0 +1,75 @@
+[2025-12-08T01:40:06.176Z] [DISC] Socket: txso20PiIsGkq1LjAAAL
+[2025-12-08T01:40:06.195Z] [CONN] Socket: YmecyVNQmJp2-RkGAAAN | IP: 127.0.0.1
+[2025-12-08T01:40:06.195Z] [ROOM] YmecyVNQmJp2-RkGAAAN joined network-127.0.0.1 | Total Size: 4
+[2025-12-08T01:40:06.196Z] [MATCH] Triggering peer-found in network-127.0.0.1
+[2025-12-08T01:40:12.613Z] [DISC] Socket: PLleY9P3OAwLprENAAAF
+[2025-12-08T01:41:01.759Z] [DISC] Socket: v_GuB8M5FAsMANOAAAAH
+[2025-12-08T01:41:02.361Z] [DISC] Socket: 9Q5xhDv9o5OtV6S8AAAJ
+[2025-12-08T01:41:02.362Z] [LOST] Room network-127.0.0.1 now has 1 peers. Resetting.
+[2025-12-08T01:41:02.376Z] [DISC] Socket: YmecyVNQmJp2-RkGAAAN
+[2025-12-08T01:41:02.377Z] [LOST] Room network-127.0.0.1 now has 0 peers. Resetting.
+[2025-12-08T01:41:02.395Z] [CONN] Socket: h7h59jGqu6DA7WLnAAAP | IP: 127.0.0.1
+[2025-12-08T01:41:02.395Z] [ROOM] h7h59jGqu6DA7WLnAAAP joined network-127.0.0.1 | Total Size: 1
+[2025-12-08T01:41:03.149Z] [DISC] Socket: h7h59jGqu6DA7WLnAAAP
+[2025-12-08T01:41:03.149Z] [LOST] Room network-127.0.0.1 now has 0 peers. Resetting.
+[2025-12-08T01:41:09.207Z] [CONN] Socket: ixUqZcn-sdQDrJfCAAAR | IP: 127.0.0.1
+[2025-12-08T01:41:09.207Z] [ROOM] ixUqZcn-sdQDrJfCAAAR joined network-127.0.0.1 | Total Size: 1
+[2025-12-08T01:41:27.644Z] [CONN] Socket: 2WyseuEuMEWiR2SNAAAT | IP: 127.0.0.1
+[2025-12-08T01:41:27.645Z] [ROOM] 2WyseuEuMEWiR2SNAAAT joined network-127.0.0.1 | Total Size: 2
+[2025-12-08T01:41:27.645Z] [MATCH] Triggering peer-found in network-127.0.0.1
+[2025-12-08T01:43:10.016Z] [CONN] Socket: BhjPgsuMmMtSVMT9AAAV | IP: 127.0.0.1
+[2025-12-08T01:43:10.017Z] [ROOM] BhjPgsuMmMtSVMT9AAAV joined network-127.0.0.1 | Total Size: 3
+[2025-12-08T01:43:10.017Z] [MATCH] Triggering peer-found in network-127.0.0.1
+[2025-12-08T01:43:38.314Z] [DISC] Socket: ixUqZcn-sdQDrJfCAAAR
+[2025-12-08T01:43:38.735Z] [DISC] Socket: 2WyseuEuMEWiR2SNAAAT
+[2025-12-08T01:43:38.736Z] [LOST] Room network-127.0.0.1 now has 1 peers. Resetting.
+[2025-12-08T01:43:38.749Z] [DISC] Socket: BhjPgsuMmMtSVMT9AAAV
+[2025-12-08T01:43:38.749Z] [LOST] Room network-127.0.0.1 now has 0 peers. Resetting.
+[2025-12-08T01:43:38.768Z] [CONN] Socket: eW5R0xZYxc2XiweeAAAX | IP: 127.0.0.1
+[2025-12-08T01:43:38.768Z] [ROOM] eW5R0xZYxc2XiweeAAAX joined network-127.0.0.1 | Total Size: 1
+[2025-12-08T01:44:05.432Z] [CONN] Socket: waP_ak_GTdCkIeB-AAAZ | IP: 127.0.0.1
+[2025-12-08T01:44:05.432Z] [ROOM] waP_ak_GTdCkIeB-AAAZ joined network-127.0.0.1 | Total Size: 2
+[2025-12-08T01:44:05.433Z] [MATCH] Triggering peer-found in network-127.0.0.1
+[2025-12-08T01:44:19.525Z] [OFFER] From eW5R0xZYxc2XiweeAAAX in network-127.0.0.1
+[2025-12-08T01:44:49.180Z] [DISC] Socket: eW5R0xZYxc2XiweeAAAX
+[2025-12-08T01:44:49.180Z] [LOST] Room network-127.0.0.1 now has 1 peers. Resetting.
+[2025-12-08T01:44:49.200Z] [DISC] Socket: waP_ak_GTdCkIeB-AAAZ
+[2025-12-08T01:44:49.201Z] [LOST] Room network-127.0.0.1 now has 0 peers. Resetting.
+[2025-12-08T01:44:49.215Z] [CONN] Socket: CeoN6uyufLkm2VSYAAAb | IP: 127.0.0.1
+[2025-12-08T01:44:49.215Z] [ROOM] CeoN6uyufLkm2VSYAAAb joined network-127.0.0.1 | Total Size: 1
+[2025-12-08T01:44:51.142Z] [CONN] Socket: 9twhuEacGrfUABPpAAAd | IP: 127.0.0.1
+[2025-12-08T01:44:51.143Z] [ROOM] 9twhuEacGrfUABPpAAAd joined network-127.0.0.1 | Total Size: 2
+[2025-12-08T01:44:51.143Z] [MATCH] Triggering peer-found in network-127.0.0.1
+[2025-12-08T01:45:40.601Z] [CONN] Socket: 8TgmxUlLvSY28coJAAAf | IP: 127.0.0.1
+[2025-12-08T01:45:40.601Z] [ROOM] 8TgmxUlLvSY28coJAAAf joined network-127.0.0.1 | Total Size: 3
+[2025-12-08T01:45:40.602Z] [MATCH] Triggering peer-found in network-127.0.0.1
+[2025-12-08T01:45:44.671Z] [CONN] Socket: 6ddkRfOqtL29XBGXAAAh | IP: 127.0.0.1
+[2025-12-08T01:45:44.671Z] [ROOM] 6ddkRfOqtL29XBGXAAAh joined network-127.0.0.1 | Total Size: 4
+[2025-12-08T01:45:44.672Z] [MATCH] Triggering peer-found in network-127.0.0.1
+[2025-12-08T01:45:50.420Z] [OFFER] From 8TgmxUlLvSY28coJAAAf in network-127.0.0.1
+[2025-12-08T01:45:58.725Z] [DISC] Socket: 8TgmxUlLvSY28coJAAAf
+[2025-12-08T01:45:58.767Z] [CONN] Socket: PWJGRsHwPOyZpLrEAAAj | IP: 127.0.0.1
+[2025-12-08T01:45:58.767Z] [ROOM] PWJGRsHwPOyZpLrEAAAj joined network-127.0.0.1 | Total Size: 4
+[2025-12-08T01:45:58.767Z] [MATCH] Triggering peer-found in network-127.0.0.1
+[2025-12-08T01:46:04.114Z] [OFFER] From PWJGRsHwPOyZpLrEAAAj in network-127.0.0.1
+[2025-12-08T01:46:10.331Z] [DISC] Socket: 6ddkRfOqtL29XBGXAAAh
+[2025-12-08T01:46:11.499Z] [DISC] Socket: PWJGRsHwPOyZpLrEAAAj
+[2025-12-08T01:47:02.787Z] [DISC] Socket: 9twhuEacGrfUABPpAAAd
+[2025-12-08T01:47:02.787Z] [LOST] Room network-127.0.0.1 now has 1 peers. Resetting.
+[2025-12-08T01:47:02.808Z] [DISC] Socket: CeoN6uyufLkm2VSYAAAb
+[2025-12-08T01:47:02.809Z] [LOST] Room network-127.0.0.1 now has 0 peers. Resetting.
+[2025-12-08T01:47:02.818Z] [CONN] Socket: e1IwlGnT-9e8hM97AAAl | IP: 127.0.0.1
+[2025-12-08T01:47:02.819Z] [ROOM] e1IwlGnT-9e8hM97AAAl joined network-127.0.0.1 | Total Size: 1
+[2025-12-08T01:47:02.828Z] [CONN] Socket: jxV7RXRvofwWva0wAAAn | IP: 127.0.0.1
+[2025-12-08T01:47:02.829Z] [ROOM] jxV7RXRvofwWva0wAAAn joined network-127.0.0.1 | Total Size: 2
+[2025-12-08T01:47:02.829Z] [MATCH] Triggering peer-found in network-127.0.0.1
+[2025-12-08T01:47:07.491Z] [OFFER] From e1IwlGnT-9e8hM97AAAl in network-127.0.0.1
+[2025-12-08T01:49:37.370Z] [DISC] Socket: jxV7RXRvofwWva0wAAAn
+[2025-12-08T01:49:37.370Z] [LOST] Room network-127.0.0.1 now has 1 peers. Resetting.
+[2025-12-08T01:49:37.373Z] [DISC] Socket: e1IwlGnT-9e8hM97AAAl
+[2025-12-08T01:49:37.374Z] [LOST] Room network-127.0.0.1 now has 0 peers. Resetting.
+[2025-12-08T01:51:14.216Z] [CONN] Socket: QWOT_9JnpsoTZGtrAAAp | IP: 127.0.0.1
+[2025-12-08T01:51:14.216Z] [ROOM] QWOT_9JnpsoTZGtrAAAp joined network-127.0.0.1 | Total Size: 1
+[2025-12-08T01:51:20.032Z] [CONN] Socket: _0vfG2I5whxs0b2WAAAr | IP: 127.0.0.1
+[2025-12-08T01:51:20.033Z] [ROOM] _0vfG2I5whxs0b2WAAAr joined network-127.0.0.1 | Total Size: 2
+[2025-12-08T01:51:20.034Z] [MATCH] Triggering peer-found in network-127.0.0.1
