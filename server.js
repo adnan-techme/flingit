@@ -3,16 +3,29 @@ const app = express();
 const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
-const io = new Server(server);
+const io = new Server(server, {
+    cors: {
+        origin: "*", // Allow all origins (Render frontend talking to backend)
+        methods: ["GET", "POST"]
+    }
+});
 const path = require('path');
 
 const PORT = process.env.PORT || 3000;
 
+// Trust Proxy for Render to get real IP
+app.set('trust proxy', true);
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 io.on('connection', (socket) => {
-    // 1. Identify IP
+    // 1. Identify IP (Robust for Render/Proxy)
     let clientIp = socket.handshake.headers['x-forwarded-for'] || socket.handshake.address;
+
+    // If multiple IPs (proxy chain), take the first one
+    if (clientIp && clientIp.indexOf(',') > -1) {
+        clientIp = clientIp.split(',')[0];
+    }
 
     // Normalize IPv6 mapped IPv4
     if (typeof clientIp === 'string') {
