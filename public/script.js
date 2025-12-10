@@ -112,16 +112,42 @@ function renderStagedFiles() {
     stagedFiles.forEach((file, index) => {
         const item = document.createElement('div');
         item.className = 'file-list-item';
-        item.innerHTML = `
-            <span class="material-symbols-outlined" style="opacity: 0.7;">description</span>
-            <div class="file-info">
-                <span class="file-name">${file.name}</span>
-                <span class="file-size">${formatBytes(file.size)}</span>
-            </div>
-            <button class="remove-btn" onclick="removeFile(${index})" title="Remove">
-                <span class="material-symbols-outlined" style="font-size: 20px;">close</span>
-            </button>
-        `;
+
+        // Create elements securely
+        const iconSpan = document.createElement('span');
+        iconSpan.className = 'material-symbols-outlined';
+        iconSpan.style.opacity = '0.7';
+        iconSpan.textContent = 'description';
+
+        const fileInfo = document.createElement('div');
+        fileInfo.className = 'file-info';
+
+        const nameSpan = document.createElement('span');
+        nameSpan.className = 'file-name';
+        nameSpan.textContent = file.name; // Secure: textContent escapes HTML
+
+        const sizeSpan = document.createElement('span');
+        sizeSpan.className = 'file-size';
+        sizeSpan.textContent = formatBytes(file.size);
+
+        fileInfo.appendChild(nameSpan);
+        fileInfo.appendChild(sizeSpan);
+
+        const removeBtn = document.createElement('button');
+        removeBtn.className = 'remove-btn';
+        removeBtn.onclick = () => removeFile(index);
+        removeBtn.title = 'Remove';
+
+        const closeIcon = document.createElement('span');
+        closeIcon.className = 'material-symbols-outlined';
+        closeIcon.style.fontSize = '20px';
+        closeIcon.textContent = 'close';
+        removeBtn.appendChild(closeIcon);
+
+        item.appendChild(iconSpan);
+        item.appendChild(fileInfo);
+        item.appendChild(removeBtn);
+
         listContainer.appendChild(item);
     });
 }
@@ -267,15 +293,35 @@ function finishBatchReceive() {
         const url = URL.createObjectURL(file.blob);
         const item = document.createElement('div');
         item.className = 'file-list-item received';
-        item.innerHTML = `
-            <div class="file-info">
-                <span class="file-name">${file.meta.name}</span>
-                <span class="file-size">${formatBytes(file.meta.size)}</span>
-            </div>
-            <a href="${url}" download="${file.meta.name}" class="download-action-btn" title="Download">
-                <span class="material-symbols-outlined">download</span>
-            </a>
-        `;
+
+        const fileInfo = document.createElement('div');
+        fileInfo.className = 'file-info';
+
+        const nameSpan = document.createElement('span');
+        nameSpan.className = 'file-name';
+        nameSpan.textContent = file.meta.name; // Secure
+
+        const sizeSpan = document.createElement('span');
+        sizeSpan.className = 'file-size';
+        sizeSpan.textContent = formatBytes(file.meta.size);
+
+        fileInfo.appendChild(nameSpan);
+        fileInfo.appendChild(sizeSpan);
+
+        const downloadLink = document.createElement('a');
+        downloadLink.href = url;
+        downloadLink.download = file.meta.name;
+        downloadLink.className = 'download-action-btn';
+        downloadLink.title = 'Download';
+
+        const downloadIcon = document.createElement('span');
+        downloadIcon.className = 'material-symbols-outlined';
+        downloadIcon.textContent = 'download';
+        downloadLink.appendChild(downloadIcon);
+
+        item.appendChild(fileInfo);
+        item.appendChild(downloadLink);
+
         listContainer.appendChild(item);
     });
 
