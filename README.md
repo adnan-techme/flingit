@@ -2,9 +2,6 @@
 
 FlingIt is a frictionless, browser-based peer-to-peer file sharing application. It allows devices on the same network to discover each other automatically and share files with zero setup.
 
-![FlingIt UI](public/screenshot.png) 
-<!-- Note: You might want to add a screenshot here later -->
-
 ## Features
 
 - **Zero-Configuration**: Automatically discovers devices on the same network node (using basic IP heuristics).
@@ -23,7 +20,7 @@ FlingIt is a frictionless, browser-based peer-to-peer file sharing application. 
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/flingit.git
+    git clone https://github.com/adnan-techme/flingit
     cd flingit
     ```
 
@@ -58,8 +55,4 @@ FlingIt is a frictionless, browser-based peer-to-peer file sharing application. 
 
 ## Deployment
 
-Designed to be deployed on platforms like [Render](https://render.com/), Heroku, or Railway. Ensure "Session Affinity" (Sticky Sessions) is enabled if scaling beyond a single instance, though this implementation is primarily designed for single-node relay.
-
-## License
-
-MIT
+Service is live on filngit.app
