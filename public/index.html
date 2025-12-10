@@ -90,25 +90,36 @@
                 <h2>Peer Connected</h2>
                 <p>Drag & Drop a file here</p>
                 <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 8px;">or click to browse</p>
-                <input type="file" id="file-input" hidden>
+                <input type="file" id="file-input" hidden multiple>
             </div>
         </div>
 
         <!-- STATE 3: FILE STAGED -->
         <div id="staged-view" class="view-state hidden">
-            <div class="card">
+            <div class="card" style="padding-bottom: 24px;">
                 <div class="file-icon">
-                    <span class="material-symbols-outlined">description</span>
+                    <span class="material-symbols-outlined">dataset</span>
                 </div>
-                <h3 id="staged-filename">image.jpg</h3>
-                <button id="send-btn" class="pill-btn">
-                    <span class="material-symbols-outlined">send</span>
-                    Send File
-                </button>
+                <h3 style="margin-bottom: 16px;">Ready to Send</h3>
+
+                <!-- File List Container -->
+                <div id="staged-files-list" class="file-list-container">
+                    <!-- Files injected by JS -->
+                </div>
+
+                <div class="button-group">
+                    <button id="add-more-btn" class="pill-btn secondary-btn" style="padding: 12px 20px;">
+                        <span class="material-symbols-outlined">add</span>
+                        Add File
+                    </button>
+                    <button id="send-btn" class="pill-btn">
+                        <span class="material-symbols-outlined">send</span>
+                        Send
+                    </button>
+                </div>
             </div>
         </div>
 
-        <!-- STATE 4: TRANSFERRING -->
         <!-- STATE 4: TRANSFERRING -->
         <div id="transfer-view" class="view-state hidden">
             <div class="card">
@@ -126,10 +137,10 @@
                 <div class="status-text" id="transfer-status">Sending...</div>
                 <!-- Success / Send Another (Hidden initially) -->
                 <div id="sender-success" style="display: none; margin-top: 24px; text-align: center;">
-                    <h3 style="margin-bottom: 16px;">Sent Successfully!</h3>
+                    <h3 style="margin-bottom: 16px;">All Files Sent!</h3>
                     <button class="pill-btn" onclick="resetSession()">
                         <span class="material-symbols-outlined">restart_alt</span>
-                        Send Another File
+                        Send Again
                     </button>
                 </div>
             </div>
@@ -137,19 +148,20 @@
 
         <!-- STATE 5: DOWNLOAD READY (Receiver) -->
         <div id="download-view" class="view-state hidden">
-            <div class="card">
+            <div class="card" style="padding-bottom: 24px;">
                 <div class="file-icon">
                     <span class="material-symbols-outlined">check_circle</span>
                 </div>
-                <h3 id="received-filename">document.pdf</h3>
-                <a id="download-btn" class="pill-btn" href="#" download style="margin-bottom: 12px;">
-                    <span class="material-symbols-outlined">download</span>
-                    Download
-                </a>
+                <h3 id="received-title" style="margin-bottom: 16px;">Files Received</h3>
+
+                <div id="received-files-list" class="file-list-container">
+                    <!-- Received items -->
+                </div>
+
                 <button class="pill-btn" onclick="resetSession()"
-                    style="background: transparent; color: var(--color-text); border: 1px solid var(--color-text);">
+                    style="margin-top: 16px; background: transparent; color: var(--color-text); border: 1px solid var(--color-text);">
                     <span class="material-symbols-outlined">restart_alt</span>
-                    Send Another
+                    Send Back
                 </button>
             </div>
         </div>

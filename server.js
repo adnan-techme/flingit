@@ -60,6 +60,11 @@ io.on('connection', (socket) => {
         socket.to(roomName).emit('file-offer', data);
     });
 
+    socket.on('batch-offer', (data) => {
+        console.log(`[BATCH] From ${socket.id} | Count: ${data.count}`);
+        socket.to(roomName).emit('batch-offer', data);
+    });
+
     socket.on('file-chunk', (data) => {
         // log(`[CHUNK] From ${socket.id}`); // Too verbose for chunks
         socket.to(roomName).emit('file-chunk', data);
