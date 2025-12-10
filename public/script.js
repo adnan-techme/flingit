@@ -292,8 +292,8 @@ const cards = document.querySelectorAll('.card');
 
 cards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
-        // Only allow tilt in Connected (upload) state or Staged state
-        if (!views.connected.classList.contains('active') && !views.staged.classList.contains('active')) {
+        // Only allow tilt in Connected (upload) state
+        if (!views.connected.classList.contains('active')) {
             card.style.transform = 'none';
             return;
         }
